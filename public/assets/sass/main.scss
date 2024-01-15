@@ -7,11 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic');
 @import url('fontawesome-all.min.css');
 
-/*
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 // Breakpoints.
 
@@ -380,61 +376,8 @@
 		}
 	}
 
-/* Button */
 
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"],
-	button,
-	.button {
-		@include vendor('transition', 'background-color .25s ease-in-out');
-		-webkit-appearance: none;
-		display: inline-block;
-		background-color: #222222;
-		color: #ffffff;
-		border: 0;
-		cursor: pointer;
-		outline: 0;
-		padding: 0.7em 1.5em 0.7em 1.5em;
 
-		&:hover {
-			background-color: #333333;
-		}
-
-		&:active {
-			background-color: #444444;
-		}
-
-		&.alt {
-			background-color: #777777;
-
-			&:hover {
-				background-color: #888888;
-			}
-
-			&:active {
-				background-color: #999999;
-			}
-		}
-
-		&.small {
-			font-size: 0.75em;
-		}
-
-		&.large {
-			font-size: 1.25em;
-			padding: 0.5em 1.25em 0.5em 1.25em;
-		}
-
-		&.xlarge {
-			font-size: 1.5em;
-			padding: 0.5em 1.25em 0.5em 1.25em;
-		}
-
-		@include breakpoint('<=small') {
-			width: 100%;
-		}
-	}
 
 /* List */
 
