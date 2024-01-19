@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Tag, Row, Col, List } from "antd"; // Assuming you have imported Card, Tag, Row, and Col from Ant Design
 import { LaptopOutlined, CodeOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
 import { Collapse } from 'antd';
+import $ from 'jquery'; 
 
 const { Panel } = Collapse;
 
@@ -171,6 +172,66 @@ const quoteStyle = {
 
 export default function Main() {
   const [activeSection, setActiveSection] = useState("home");
+  const [words] = useState([
+    'Responsive Design',
+    'Application Programming Interfaces (APIs)',
+    'React',
+    'Backend',
+    'Full Stack Development',
+    'JavaScript Frameworks | React & Next.JS',
+    'Version Control',
+    'SEO (Search Engine Optimization)',
+    'RESTful API',
+    'Web Components',
+    'Authentication and Authorization',
+    'Single Page Applications (SPAs)',
+    'Microservices',
+    'Cross-Origin Resource Sharing (CORS)',
+    'Continuous Integration (CI)',
+    'Scalability',
+    'Code Splitting',
+    'Continuous Deployment (CD)',
+    'Web Accessibility (a11y)',
+    'NPM (Node Package Manager)',
+    'Session and Cookies'
+  ]);
+  let part, i = 0, offset = 0, len = words.length, forwards = true, skipCount = 0, skipDelay = 15, speed = 70;
+
+  const wordFlick = () => {
+    setInterval(() => {
+      if (forwards) {
+        if (offset >= words[i].length) {
+          ++skipCount;
+          if (skipCount === skipDelay) {
+            forwards = false;
+            skipCount = 0;
+          }
+        }
+      } else {
+        if (offset === 0) {
+          forwards = true;
+          i++;
+          offset = 0;
+          if (i >= len) {
+            i = 0;
+          }
+        }
+      }
+      part = words[i].substr(0, offset);
+      if (skipCount === 0) {
+        if (forwards) {
+          offset++;
+        } else {
+          offset--;
+        }
+      }
+      $('.word').text(part);
+    }, speed);
+  };
+
+  useEffect(() => {
+    wordFlick();
+  }, []); // Run the effect only once on component mount
 
   const handleNavLinkClick = (section, e) => {
     e.preventDefault(); // Prevent default behavior of anchor tag
@@ -255,13 +316,18 @@ export default function Main() {
       </nav>
 
       {/* <!-- Main --> */}
-      <div id="main">
+      <div id="main" style={{
+        borderRadius: '10px'
+      }}>
         {/* <!-- Me --> */}
         {activeSection === "home" && (
-          <article id="home" className="panel intro">
+          <article id="home" className="panel intro"    >
             <header>
-              <h1>Fortune Ewuru</h1>
-              <p>Backend Web Development</p>
+            <h1 className="animate-character" style={{ fontWeight: 'bold', fontFamily: 'YourLuxuriousFont, sans-serif', textAlign: 'center' }}>
+        FORTUNE EWURU
+      </h1>             
+      <p style={{ textAlign: 'center' }}>Backend Web Developer</p>
+      <div style={{ textAlign: 'center', paddingTop:'5%' }} className="word"></div>
             </header>
             <a
               href="#work"
@@ -521,18 +587,18 @@ export default function Main() {
               <div className="row">
 
               <div style={{ width: '70%', height: '70%', margin: 'auto', marginTop:'60px', marginBottom:'60px' }}>
-      <a href="https://mediconnectbyfortune.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a href="https://fortunehealth.vercel.app/" target="_blank" rel="noopener noreferrer">
       <img
-  src='images/mediconnect.png'
-  alt="Mediconnect"
+  src='images/fortunehealth.png'
+  alt="FortuneHealth landing page"
   style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
 />
       </a>
       <Collapse>
-  <Panel header={<h2 style={{ fontSize: '1.2rem' }}>MediConnect: GitHub for Healthcare Professionals</h2>} key="1">
+  <Panel header={<h2 style={{ fontSize: '1.2rem' }}>FortuneHealth: GitHub for Healthcare Professionals</h2>} key="1">
     <div style={{ backgroundColor: '#B4D4FF', padding: '10px' }}>
       <p>
-        MediConnect is your solution for managing and sharing hospital patient information.
+        FortuneHealth is your solution for managing and sharing hospital patient information.
 
         <h3>Key Features</h3>
 
@@ -640,9 +706,7 @@ export default function Main() {
       <div id="footer">
         <ul class="copyright">
           <li>&copy; Fortune Ewuru.</li>
-          <li>
-            With support from: <a href="http://html5up.net">HTML5 UP</a>
-          </li>
+         
         </ul>
       </div>
     </div>
