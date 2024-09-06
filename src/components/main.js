@@ -177,8 +177,16 @@ export default function Main() {
     'Application Programming Interfaces (APIs)',
     'React',
     'Backend',
+    'Redis',
+    'Frontend',
+    'Redux',
+    'Python',
+    'TypeScript',
+    'Node.Js',
+    'Django',
+    'Flask',
     'Full Stack Development',
-    'JavaScript Frameworks | React & Next.JS',
+    'Next.JS',
     'Version Control',
     'SEO (Search Engine Optimization)',
     'RESTful API',
@@ -193,7 +201,124 @@ export default function Main() {
     'Continuous Deployment (CD)',
     'Web Accessibility (a11y)',
     'NPM (Node Package Manager)',
-    'Session and Cookies'
+    'Session and Cookies',
+    'GraphQL',
+    'WebSockets',
+    'Progressive Web Apps (PWAs)',
+    'Serverless Architecture',
+    'Docker',
+    'Kubernetes',
+    'Cloud Computing',
+    'AWS (Amazon Web Services)',
+    'Azure',
+    'Google Cloud Platform (GCP)',
+    'DevOps',
+    'Agile Methodology',
+    'Scrum',
+    'Kanban',
+    'Test-Driven Development (TDD)',
+    'Behavior-Driven Development (BDD)',
+    'Jest',
+    'Selenium',
+   
+    'GitHub Actions',
+    'GitLab CI',
+    'Terraform',
+
+    'WebAssembly',
+    'Service Workers',
+    'IndexedDB',
+    'LocalStorage',
+    'SessionStorage',
+    'CSS-in-JS',
+    'Styled Components',
+    'Emotion',
+    'Tailwind CSS',
+    'Sass',
+    'Less',
+    'Bootstrap',
+    'Material-UI',
+    'Ant Design',
+    'Vue.js',
+    'Angular',
+    'Svelte',
+
+
+    'Knockout.js',
+    'Meteor.js',
+    'Apollo Client',
+    'Relay',
+    'Firebase',
+    'MongoDB',
+    'PostgreSQL',
+    'MySQL',
+    'SQLite',    'Redux Thunk',
+    'Context API',
+    'Hooks',
+    'Higher-Order Components (HOCs)',
+    'Render Props',
+    'Portals',
+    'Fragments',
+    'Error Boundaries',
+    'Code Review',
+    'Pair Programming',
+    'Code Refactoring',
+    'Technical Debt',
+    'Software Architecture',
+    'Design Patterns',
+    'Microfrontends',
+    'Server-Side Rendering (SSR)',
+    'Static Site Generation (SSG)',    'Headless CMS',
+    'Content Delivery Network (CDN)',
+    'Web Performance Optimization',    'Code Coverage',
+    'Unit Testing',
+    'Integration Testing',
+    'End-to-End Testing',
+    'Load Testing',
+    'Stress Testing',
+    'Security Testing',
+    'Penetration Testing',
+    'Vulnerability Scanning',
+    'OAuth',
+    'JWT (JSON Web Tokens)',
+
+    'OAuth2',
+    'OAuth1',
+    'HTTP/2',
+    'HTTP/3',
+    'WebP',
+  
+    'Infrastructure as Code (IaC)',
+    'Container Orchestration',
+    'Serverless Functions',
+    'Lambda Functions',
+    'Azure Functions',
+    'Google Cloud Functions',
+    'Cloudflare Workers',
+    'Edge Computing',
+    'FaaS (Functions as a Service)',
+    'BaaS (Backend as a Service)',
+    'PaaS (Platform as a Service)',
+    'IaaS (Infrastructure as a Service)',
+    'SaaS (Software as a Service)',
+    'Multi-Cloud',
+    'Hybrid Cloud',
+    'Private Cloud',
+    'Public Cloud',
+    'On-Premises',
+    'Data Center',
+    'Virtualization',
+  
+    'Apache Kafka',
+
+
+    'OpenMetrics',
+    'OpenAPI',
+    'Swagger',
+    'Postman',    'GraphiQL',    'Sequelize',
+    'Mongoose',
+    'Hibernate',
+    'Entity Framework',    'SQLAlchemy',    'Django ORM',
   ]);
   let part, i = 0, offset = 0, len = words.length, forwards = true, skipCount = 0, skipDelay = 15, speed = 70;
 
@@ -326,7 +451,7 @@ export default function Main() {
             <h1 className="animate-character" style={{ fontWeight: 'bold', fontFamily: 'YourLuxuriousFont, sans-serif', textAlign: 'center' }}>
         FORTUNE EWURU
       </h1>             
-      <p style={{ textAlign: 'center' }}>Backend Web Developer</p>
+      <p style={{ textAlign: 'center' }}>Intermediate Software Development</p>
       <div style={{ textAlign: 'center', paddingTop:'5%' }} className="word"></div>
             </header>
             <a
@@ -530,51 +655,8 @@ export default function Main() {
                 real-world <span style={trapeziumStyle}>problems</span>, and
                 making a difference.
               </p>
-              <p style={paragraphStyle}>
-                Just as a{" "}
-                <span style={trapeziumStyle}>
-                  ..painter brings colors to a canvas...
-                </span>
-                , I bring functionality to lines of code, creating digital
-                masterpieces that resonate with efficiency and elegance.
-              </p>
-              <p style={paragraphStyle}>
-                Each project I undertake is a canvas for my creativity, where I
-                strive to design solutions that not only address{" "}
-                <span style={trapeziumStyle}>challenges</span> but also add a
-                touch of innovation and delight.
-              </p>
-              <p style={quoteStyle}>
-                "
-                <span style={trapeziumStyle}>
-                  ..Coding is my language of expression...
-                </span>
-                , and through it, I bring my ideas to life."
-              </p>
-              <p style={paragraphStyle}>
-                Whether it's building{" "}
-                <span style={trapeziumStyle}>applications</span> that streamline
-                processes, developing{" "}
-                <span style={trapeziumStyle}>software</span> that solves complex{" "}
-                <span style={trapeziumStyle}>problems</span>, or crafting{" "}
-                <span style={trapeziumStyle}>games</span> that captivate and
-                entertain, I am fueled by the excitement of turning{" "}
-                <span style={trapeziumStyle}>possibilities</span> into
-                realities.
-              </p>
-              <p style={paragraphStyle}>
-                In the vast landscape of{" "}
-                <span style={trapeziumStyle}>technology</span>, I see{" "}
-                <span style={trapeziumStyle}>opportunities</span> to create,
-                innovate, and contribute to a world that is constantly evolving.
-              </p>
-              <p style={quoteStyle}>
-                "Join me in this exhilarating{" "}
-                <span style={trapeziumStyle}>adventure of coding..</span>, where
-                every project is not just a task but a testament to the endless{" "}
-                <span style={trapeziumStyle}>possibilities</span> that unfold
-                when creativity meets technology."
-              </p>
+             
+             
               <p style={paragraphStyle}>
                 Let's code a future where{" "}
                 <span style={trapeziumStyle}>problems</span> are opportunities,
