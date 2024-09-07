@@ -29,7 +29,17 @@ body {
 	line-height: 1;
 }
 
-
+.col-4, .col-6-medium, .col-12-small {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .col-4.animate, .col-6-medium.animate, .col-12-small.animate {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
 /* CSS */
 .button-49,
 .button-49:after {

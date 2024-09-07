@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import ProjectItem from './ProjectItem'; // Import the ProjectItem component
+
 import { Card, Tag, Row, Col, List } from "antd"; // Assuming you have imported Card, Tag, Row, and Col from Ant Design
 import { LaptopOutlined, CodeOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
@@ -27,35 +29,46 @@ const imageUrls = [
   "images/journal.png",
   "images/chart-sim.png",
   "images/watermark.png",
+  "images/qfgcf.png",
+  "images/havendogs.png",
+
 ];
 
 const projects = [
   {
-    id: 1,
-    title: "My Google Keeper Clone",
+    id: 16,
+    title: "HavenDogs",
     description:
-      "Streamline Your Thoughts: Your Personal Productivity Powerhouse!",
-    imageUrl: imageUrls[0],
-    link: "https://google-keeper-clone-app.vercel.app/",
+      "HavenDogs is a comprehensive web application designed to connect pet owners with essential services such as pet sitters, trainers, and veterinarians. Our platform also facilitates rescues and adoptions, making it easier for pets to find loving homes. With advanced search and filtering options, users can quickly locate the services they need. Additionally, HavenDogs offers a community forum where pet owners can share experiences, seek advice, and build a supportive network. The platform is built with cutting-edge technology, ensuring a seamless and secure user experience. Whether you're a pet owner looking for reliable services or an animal lover seeking to adopt, HavenDogs is your go-to solution.",
+    imageUrl: imageUrls[17],
+    link: "https://havendogs.org/",
+  }, {
+    id: 17,
+    title: "Queen Fatima Girl Child Foundation",
+    description:
+      "The Queen Fatima Girl Child Foundation is a pioneering initiative dedicated to empowering young girls through education and community support. Our platform utilizes state-of-the-art technology to facilitate donations, track progress, and engage with our community. With a user-friendly interface and robust security measures, we ensure that every contribution makes a tangible impact. By leveraging data analytics and real-time reporting, we provide transparency and accountability, fostering trust among our donors and stakeholders. Join us in making a difference and shaping a brighter future for girls worldwide.",
+    imageUrl: imageUrls[16],
+    link: "https://qfgcf.org/",
   },
-
+  
   {
     id: 14,
     title: "Journal by Fortune",
     description:
-      "Capture Your Thoughts: Your Personal Space for Reflection and Creativity.",
+      "Journal by Fortune is a personal blog where I share my thoughts, experiences, and reflections. This platform serves as a digital space for self-expression and introspection, offering readers a glimpse into my journey. With a clean and intuitive design, Journal by Fortune provides an engaging reading experience. Whether I'm discussing personal growth, sharing insights on various topics, or simply documenting my daily life, this blog is a testament to my commitment to authenticity and open communication. Join me as I explore the world and navigate life's challenges and triumphs.",
     imageUrl: imageUrls[13],
     link: "https://journal-by-fortune.onrender.com/",
   },
-
+  
   {
     id: 15,
     title: "Music Chart Simulator",
     description:
-      "Create Your Playlist: Experience the Thrill of Music Chart Simulation.",
+      "Music Chart Simulator is an innovative web application that allows users to create and simulate their own music charts. With a user-friendly interface and powerful simulation algorithms, our platform offers an immersive experience for music enthusiasts. Users can add their favorite songs, customize chart parameters, and watch as their playlists climb the charts in real-time. The platform also provides detailed analytics and insights, helping users understand trends and patterns in their music preferences. Whether you're a casual listener or a music industry professional, Music Chart Simulator offers a unique and engaging way to explore and enjoy music.",
     imageUrl: imageUrls[14],
     link: "https://chart-sim.vercel.app/",
-  },
+  }
+,  
 
   {
     id: 4,
@@ -84,7 +97,7 @@ const projects = [
     id: 12,
     title: "Image Color Palette Generator",
     description:
-      "Discover the Hues: Generate Stunning Color Palettes from Your Images.",
+      "Discover the Hues: Generate Stunning Color Palettes from Your Images. Our advanced algorithm analyzes your uploaded images to extract a harmonious color palette, perfect for designers, artists, and creatives. With a sleek interface and real-time processing, the Image Color Palette Generator ensures a seamless and inspiring user experience. Elevate your projects with the perfect color combinations effortlessly.",
     imageUrl: imageUrls[11],
     link: "https://image-color-palette-generator.onrender.com",
   },
@@ -92,7 +105,7 @@ const projects = [
     id: 5,
     title: "Auto Avenue",
     description:
-      "Driving the Future: Your Ultimate Destination for Car Enthusiasts.",
+      "Driving the Future: Your Ultimate Destination for Car Enthusiasts. Auto Avenue is a comprehensive platform designed to cater to the needs of automobile aficionados. Featuring detailed vehicle specifications, user reviews, and the latest industry news, our platform offers an immersive experience for car lovers. With advanced search and filtering options, users can easily find their dream car. Join the community and stay updated on the latest trends and innovations in the automotive world.",
     imageUrl: imageUrls[4],
     link: "https://auto-avenue.netlify.app/",
   },
@@ -100,7 +113,7 @@ const projects = [
     id: 10,
     title: "taskHarbor",
     description:
-      "Navigate Your Tasks: Simplify Your Day with the taskHarbor To-Do List.",
+      "Navigate Your Tasks: Simplify Your Day with the taskHarbor To-Do List. taskHarbor is a powerful task management tool that helps you stay organized and productive. With features like priority tagging, deadline reminders, and customizable categories, our platform ensures you never miss a beat. The intuitive interface and seamless integration with other tools make taskHarbor the perfect solution for managing your daily tasks and long-term goals.",
     imageUrl: imageUrls[9],
     link: "https://taskharbour-taxw.onrender.com/",
   },
@@ -108,16 +121,15 @@ const projects = [
     id: 6,
     title: "CareerXP",
     description:
-      "Craft Your Future: Create, Share, and Generate Career Paths with Expert Advice.",
+      "Craft Your Future: Create, Share, and Generate Career Paths with Expert Advice. CareerXP is a revolutionary platform designed to help individuals navigate their career journeys. With expert-curated content, personalized career pathways, and a supportive community, our platform empowers users to make informed decisions about their professional development. Featuring advanced analytics and real-time updates, CareerXP provides the tools and insights needed to achieve career success.",
     imageUrl: imageUrls[5],
     link: "https://careerxp.onrender.com/",
   },
-
   {
     id: 9,
     title: "Breakout Game",
     description:
-      "Relive the Classic: Experience the Timeless Thrills of the Breakout Game.",
+      "Relive the Classic: Experience the Timeless Thrills of the Breakout Game. Our Breakout Game is a modern take on the classic arcade game, offering an engaging and nostalgic gaming experience. With smooth graphics, intuitive controls, and challenging levels, our game ensures hours of fun. Built with cutting-edge technology, the Breakout Game delivers a seamless and immersive experience for players of all ages.",
     imageUrl: imageUrls[8],
     link: "https://github.com/ewurufortune/breakout-game",
   },
@@ -125,10 +137,10 @@ const projects = [
     id: 2,
     title: "ReSource",
     description:
-      "Unlock the Power of Curation: Crafting and Sharing Top 5s Made Effortless!",
+      "Unlock the Power of Curation: Crafting and Sharing Top 5s Made Effortless! ReSource is a dynamic platform that allows users to create and share curated lists of their favorite items. Whether it's top 5 movies, books, or travel destinations, our platform makes it easy to compile and share your recommendations. With a user-friendly interface and robust sharing features, ReSource fosters a community of enthusiasts who love to discover and share the best of everything.",
     imageUrl: imageUrls[1],
     link: "https://oursource.onrender.com/",
-  },
+  },  
 
   {
     id: 11,
@@ -139,13 +151,13 @@ const projects = [
     link: "https://github.com/ewurufortune/watermark",
   },
 
-  {
-    id: 13,
-    title: "About Me",
-    description: "Explore My Journey: Learn More About Fortune Ewuru.",
-    imageUrl: imageUrls[12],
-    link: "https://fortune-ewuru.vercel.app/",
-  },
+  // {
+  //   id: 13,
+  //   title: "About Me",
+  //   description: "Explore My Journey: Learn More About Fortune Ewuru.",
+  //   imageUrl: imageUrls[12],
+  //   link: "https://fortune-ewuru.vercel.app/",
+  // },
   {
     id: 3,
     title: "Moving Train Autos",
@@ -154,6 +166,15 @@ const projects = [
     imageUrl: imageUrls[2],
     link: "https://carsalessitefortuneewuru.netlify.app/",
   },
+  {
+    id: 1,
+    title: "My Google Keeper",
+    description:
+      "Streamline Your Thoughts: Your Personal Productivity Powerhouse!",
+    imageUrl: imageUrls[0],
+    link: "https://google-keeper-clone-app.vercel.app/",
+  },
+
 ];
 
 const paragraphStyle = {
@@ -635,7 +656,7 @@ export default function Main() {
             </header>
             <>
               <p style={paragraphStyle}>
-                As a devoted full-stack developer I find{" "}
+                As a devoted Full-Stack Engineer, I find{" "}
                 <span style={trapeziumStyle}> immense joy </span> in crafting
                 lines of code that breathe life into{" "}
                 <span style={trapeziumStyle}>innovative </span>and purposeful
@@ -703,32 +724,11 @@ export default function Main() {
 
     </div>
 
-                {projects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="col-4 col-6-medium col-12-small"
-                  >
-                    <Popover
-                      content={
-                        <Card>
-                          <Meta
-                            title={project.title}
-                            description={project.description}
-                          />
-                        </Card>
-                      }
-                    >
-                      <a
-                        href={project.link}
-                        className="image fit"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={project.imageUrl} alt={project.title} />
-                      </a>
-                    </Popover>
-                  </div>
-                ))}
+                <>
+      {projects.map((project, index) => (
+        <ProjectItem key={project.id} project={project} index={index} />
+      ))}
+    </>
                 <div className="see-more-link">
                   <a
                     href="https://github.com/ewurufortune"
